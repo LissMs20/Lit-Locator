@@ -1,0 +1,14 @@
+#app{
+    width: 1400px;
+    height: 300px;
+    overflow: hidden;
+    display: flex; 
+}
+.img-container{
+    transition: transform 1s;
+}
+img{
+    width: 1400px;
+    height: 300px;
+    border-radius: 15px;
+}
