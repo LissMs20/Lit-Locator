@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="pesquisa.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;700&display=swap" rel="stylesheet">
+    <title>Lit Locator</title>
+</head>
+
+<body>
+   <header>
+    <div class="cabecalho">
+       
+        <div id="logo">
+            <img src="img/logo.png" width="102px" height="97px">
+        </div>
+
+        <form id="searchForm">
+            <div id="barra-pesquisa">
+                <input type="text" id="searchInput" placeholder="Digite seu livro de interesse">
+                <button class="search-button">
+                    <img src="img/icons8-pesquisar-50.png" alt="Pesquisar" width="20px" height="20px">
+                </button>
+            </div>
+        </form>
+
+        <div id="botao-1">
+            <button><a href="Home.html">Voltar</a></button>
+        </div>
+    </div>
+
+    <div id="searchResults"></div>
+
+    <script src="pesquisa.js"></script>
+    
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            
+            searchBooks();
+        });
+    </script>
+</body>
+</html>
