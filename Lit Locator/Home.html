@@ -18,42 +18,41 @@
             <img src="img/logo.png" width="102px" height="97px">
         </div>
 
-        <div id="barra-pesquisa">
-            <input type="text">
-            <button class="search-button" onclick="redirect()">
-                <img src="img/icons8-pesquisar-50.png" alt="Pesquisar" width="20px" height="20px">
-            </button>
-        </div>  
-
-            <img src="img/usuario-de-perfil.png" alt="">
-            <div id="botao-1">
-                <button><a href="#">CADASTRE-SE</a></button>
+        <form action="pesquisa.html" method="GET">
+            <div id="barra-pesquisa">
+                <input type="text" id="searchInput" name="q">
+                <button class="search-button">
+                    <img src="img/icons8-pesquisar-50.png" alt="Pesquisar" width="20px" height="20px">
+                </button>
             </div>
+        </form>
+
+        <div id="botao-1">
+            <button><a href="#">CADASTRE-SE</a></button>
+        </div>
     </div>
 
     <nav class="navbar">   
-            <ul><a href="Home.html">INICIO</a></ul>
-            <ul><a href="sobre.html">SOBRE</a></ul>
-            <ul><a href="contato.html">CONTATO</a></ul>
+        <ul><a href="Home.html">INICIO</a></ul>
+        <ul><a href="sobre.html">SOBRE</a></ul>
+        <ul><a href="contato.html">CONTATO</a></ul>
     </nav>
-
    </header>
 
     <main>
-
         <div class="carousel-container">
             <object data="Caroussel.html" width= "1412px" height= "317px"></object>
         </div>
 
         <div class="main-grid">
-
             <div class="grid-image">
-                <img src="img/lendo.jpg" alt="" id="main-image">
-                <div><p>ENCONTRE LIVROS</p></div>
+                <a href="pesquisa.html">
+                    <img src="img/lendo.jpg" alt="" id="main-image">
+                    <div><p>ENCONTRE LIVROS</p></div>
+                </a>
             </div>
 
             <div class="grid-images">
-
                 <div class="secao">
                     <img src="img/trocas.jpeg" alt="" class="sub-image">
                     <div><p>TROCAS</p></div>
@@ -61,7 +60,7 @@
 
                 <div class="secao">
                     <img src="img/resenha.jpeg" alt="" class="sub-image">
-                    <div><p>RESENHA</p></div>
+                    <div><p>RESENHAS</p></div>
                 </div>
 
                 <div class="secao">
@@ -73,8 +72,9 @@
                     <img src="img/recomendacoes.jpeg" alt="" class="sub-image">
                     <div><p>RECOMENDAÇÕES</p></div>
                 </div>
-
             </div>
+        </div>
     </main>
+</body>
 
-    </body>
+</html>
