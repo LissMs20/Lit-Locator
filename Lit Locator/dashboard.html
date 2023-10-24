@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard de Livros Favoritos</title>
+    <link rel="stylesheet" href="dashboard.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    
+        <title>Lit Locator</title>
+</head>
+<body>
+    <header>
+        <div class="cabecalho">
+           
+            <div id="logo">
+                <img src="img/logo.png" width="102px" height="97px">
+            </div>
+    
+        </div>
+    
+       </header>
+    <h1>Dashboard de Livros Favoritos</h1>
+    <table id="favoriteBooksTable">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autores</th>
+                <th>Editora</th>
+                <th>Ano de Publicação</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    
+    <div class="metric">
+        <h2>Total de Livros Favoritos</h2>
+        <p id="totalFavorites">Calculando...</p>
+    </div>
+    <div class="metric">
+        <h2>Livros Favoritos por Autor</h2>
+        <ul id="favoriteAuthors">
+            <li>Calculando...</li>
+        </ul>
+    </div>
+    <div class="metric">
+        <h2>Editoras Favoritas</h2>
+        <ul id="favoritePublishers">
+            <li>Calculando...</li>
+        </ul>
+    </div>
+    <div class="metric">
+        <h2>Livros por Ano de Publicação</h2>
+        <ul id="booksByYear">
+            <li>Calculando...</li>
+        </ul>
+    </div>
+    <div class="metric">
+        <h2>Títulos de Livros Únicos</h2>
+        <p id="uniqueTitles">Calculando...</p>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

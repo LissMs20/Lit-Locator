@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Changa', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.cabecalho {
+    background-color: #499DB3;
+    height: 112px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+#logo {
+    width: 97px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    padding: 20px 0;
+}
+
+.table-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#favoriteBooksTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+#favoriteBooksTable th,
+#favoriteBooksTable td {
+    padding: 10px;
+    text-align: left;
+}
+
+#favoriteBooksTable th {
+    background-color: #1E5867;
+    color: #fff;
+}
+
+#favoriteBooksTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.metric {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.metric h2 {
+    color: #333;
+}
+
+.metric p,
+.metric li {
+    color: #666;
+}

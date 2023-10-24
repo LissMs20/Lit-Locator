@@ -9,10 +9,37 @@ function searchBooks() {
         .then(response => response.json())
         .then(data => {
             displayResults(data.items);
+            addToPesquisas(data.items);
         })
         .catch(error => {
             console.error("Erro ao buscar livros:", error);
         });
+}
+
+function addToPesquisas(books) {
+    const searchData = books.map(book => ({
+        title: book.volumeInfo.title,
+        authors: book.volumeInfo.authors ? book.volumeInfo.authors.join(', ') : 'Desconhecido',
+        publisher: book.volumeInfo.publisher || 'Desconhecida',
+        publishedDate: book.volumeInfo.publishedDate || 'Desconhecido',
+        thumbnail: book.volumeInfo.imageLinks?.thumbnail || '',
+        previewLink: book.volumeInfo.previewLink || '',
+    }));
+
+    fetch('/adicionar-livro-pesquisa', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(searchData)
+    })
+    .then(response => response.json())
+    .then(result => {
+        console.log(result.message);
+    })
+    .catch(error => {
+        console.error("Erro ao adicionar à tabela de pesquisas:", error);
+    });
 }
 
 function displayResults(books) {
@@ -34,15 +61,16 @@ function displayResults(books) {
         resultsHTML += `<p class='result-info'>Editora: ${book.volumeInfo.publisher || 'Desconhecida'}</p>`;
         resultsHTML += `<p class='result-info'>Publicado em: ${book.volumeInfo.publishedDate || 'Desconhecido'}</p>`;
         
-        // Verificará se a propriedade imageLinks está presente e exibe a imagem da capa do livro
         if (book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail) {
             resultsHTML += `<img src="${book.volumeInfo.imageLinks.thumbnail}" alt="Capa do Livro" class='result-image'>`;
         } else {
             resultsHTML += "<p class='result-info'>Imagem não disponível</p>";
         }
-        
+
         resultsHTML += `<p class='result-link'><a href="${book.volumeInfo.previewLink}" target="_blank">Ver mais</a></p>`;
+        resultsHTML += `<button class='add-to-favorites' onclick='addToFavorites("${book.volumeInfo.title}", "${book.volumeInfo.authors ? book.volumeInfo.authors.join(', ') : 'Desconhecido'}", "${book.volumeInfo.publisher || 'Desconhecida'}", "${book.volumeInfo.publishedDate || 'Desconhecido'}", "${book.volumeInfo.imageLinks?.imageUrl || ''}", "${book.volumeInfo.previewLink || ''}")'>Adicionar aos Favoritos</button>`;
         resultsHTML += "</li>";
+
     });
 
     resultsHTML += "</ul>";
@@ -51,4 +79,28 @@ function displayResults(books) {
     resultsContainer.innerHTML = resultsHTML;
 }
 
+function addToFavorites(title, authors, publisher, publishedDate, thumbnail, previewLink) {
+    const data = {
+        title,
+        authors,
+        publisher,
+        publishedDate,
+        thumbnail,
+        previewLink
+    };
 
+    fetch('/adicionar-favorito', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
+        alert(result.message);
+    })
+    .catch(error => {
+        console.error("Erro ao adicionar aos favoritos:", error);
+    });
+}

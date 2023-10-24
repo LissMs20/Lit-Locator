@@ -1,0 +1,18 @@
+{
+  "name": "lit-locator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "carousel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "copy Home.html build\\ && copy carousel.css build\\ && copy contato.html build\\ && copy contato.css build\\ && copy pesquisa.html build\\ && copy pesquisa.css build\\ && copy sobre.html build\\ && copy sobre.css build\\ && copy carousel.js build\\ && copy pesquisa.js build\\"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "node-fetch": "^3.3.2"
+  }
+}
