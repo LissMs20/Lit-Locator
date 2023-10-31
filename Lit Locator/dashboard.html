@@ -7,6 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
         <title>Lit Locator</title>
 </head>
@@ -40,21 +41,31 @@
         <h2>Total de Livros Favoritos</h2>
         <p id="totalFavorites">Calculando...</p>
     </div>
-    <div class="metric">
-        <h2>Livros Favoritos por Autor</h2>
-        <ul id="favoriteAuthors">
-            <li>Calculando...</li>
-        </ul>
+
+    <div class="metricChart">
+        <div class="metric metric-left">
+            <h2>Livros Favoritos por Autor</h2>
+            <ul id="favoriteAuthors">
+                <li>Calculando...</li>
+            </ul>
+            <div class="chart">
+                <canvas id="booksAuthorChart"></canvas>
+            </div>
+        </div>
+        <div class="metric metric-right">
+            <h2>Livros por Ano de Publicação</h2>
+            <ul id="booksByYear">
+                <li>Calculando...</li>
+            </ul>
+            <div class="chart">
+                <canvas id="booksByYearChart"></canvas>
+            </div>     
+        </div>
     </div>
+    
     <div class="metric">
         <h2>Editoras Favoritas</h2>
         <ul id="favoritePublishers">
-            <li>Calculando...</li>
-        </ul>
-    </div>
-    <div class="metric">
-        <h2>Livros por Ano de Publicação</h2>
-        <ul id="booksByYear">
             <li>Calculando...</li>
         </ul>
     </div>

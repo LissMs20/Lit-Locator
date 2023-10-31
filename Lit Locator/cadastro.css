@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+body {
+    font-family: 'Changa', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#logo {
+    width: 50%;
+    text-align: center;
+}
+
+main {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-flow: column;
+    gap: 5px;
+    background-color: #4d6885;
+    padding: 30px;
+    align-items: center;
+}
+
+p {
+    color: red;
+}
+
+label {
+    color: white;
+}
+
+h1 {
+    color: #273b3f;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"] {
+    width: 60%;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 7px;
+    margin-bottom: 5px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus {
+    color: #333;
+}
+
+button:hover,
+a:hover {
+    background-color: #d3493d;
+    color: white;
+}
+
+button {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    background-color: #AB3D32;
+    color: white;
+    border: 1px solid #ccc;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="logo">
+        <img src="img/logo.png">
+    </div>
+    <main>
+            <h1>Cadastre-se</h1>
+            <label for="nome">Nome</label>
+            <input type="text" name="" id="nome">
+            <p id="alerta_nome"></p>
+            <label for="senha">Senha</label>
+            <input type="text" name="" id="senha">
+            <p id="alerta_senha"></p>
+            <label for="email">E-mail</label>
+            <input type="email" name="" id="email" placeholder="exemplo@mail.com" required>
+            <p id="alerta_email"></p>
+            <label for="dataNasc">Data de nascimento</label>
+            <input type="date" name="" id="dataNasc">
+            <p id="alerta_dataNasc"></p>
+            <button onclick="cadastrar()" id="cadastrar" class="qualquer">Cadastrar</button>
+    </main>
+    <script src="cadastro.js"></script>
+</body>
+</html>

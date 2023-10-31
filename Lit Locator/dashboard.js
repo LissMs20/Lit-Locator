@@ -14,13 +14,41 @@ document.addEventListener('DOMContentLoaded', () => {
             const totalFavorites = data.length;
             document.getElementById('totalFavorites').textContent = totalFavorites;
 
-            const authors = data.map(book => book.authors);
             const authorCounts = {};
-            authors.forEach(author => {
-                authorCounts[author] = (authorCounts[author] || 0) + 1;
+            data.forEach(book => {
+                book.authors.split(',').forEach(author => {
+                    authorCounts[author] = (authorCounts[author] || 0) + 1;
+                });
             });
-            const favoriteAuthorsList = Object.entries(authorCounts).map(([author, count]) => `${author}: ${count}`);
+
+            const favoriteAuthorsList = Object.entries(authorCounts)
+                .map(([author, count]) => `${author}: ${count}`);
             document.getElementById('favoriteAuthors').innerHTML = favoriteAuthorsList.join('<br>');
+
+            const booksAuthorChartCanvas = document.getElementById('booksAuthorChart');
+            const authors = Object.keys(authorCounts);
+            const bookCounts = Object.values(authorCounts);
+
+            new Chart(booksAuthorChartCanvas, {
+                type: 'bar',
+                data: {
+                    labels: authors,
+                    datasets: [
+                        {
+                            label: 'Número de Livros',
+                            data: bookCounts,
+                            backgroundColor: 'rgba(45, 0, 87, 0.8)',
+                        },
+                    ],
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                        },
+                    },
+                },
+            });
 
             const publishers = data.map(book => book.publisher);
             const publisherCounts = {};
@@ -38,6 +66,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const booksByYearList = Object.entries(yearCounts).map(([year, count]) => `${year}: ${count}`);
             document.getElementById('booksByYear').innerHTML = booksByYearList.join('<br>');
+
+            const booksByYearChartCanvas = document.getElementById('booksByYearChart');
+            const booksByYearData = Object.values(yearCounts);
+            const booksByYearLabels = Object.keys(yearCounts);
+            new Chart(booksByYearChartCanvas, {
+                type: 'bar',
+                data: {
+                    labels: booksByYearLabels,
+                    datasets: [
+                        {
+                            label: 'Número de Livros',
+                            data: booksByYearData,
+                            backgroundColor: 'rgba(171, 61, 50, 0.8)',
+                        },
+                    ],
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                        },
+                    },
+                },
+            });
 
             const uniqueTitles = new Set(data.map(book => book.title));
             document.getElementById('uniqueTitles').textContent = uniqueTitles.size;
